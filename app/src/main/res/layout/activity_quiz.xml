@@ -11,102 +11,106 @@
     tools:context="com.example.galan.tugasquiz.QuizActivity"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_marginBottom="40dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SCORE"
-            android:layout_alignParentLeft="true"
-            android:id="@+id/score_text"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/score"
-            android:layout_alignParentRight="true"
-            android:text="0"
-            android:textSize="20dp"/>
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Ibukota Provinsi Jawa Timur..."
-        android:textSize="20dp"
-        android:padding="8dp"
-        android:layout_marginBottom="40dp"
-        android:id="@+id/question"/>
-
-    <TextView
-        android:text="TextView"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:paddingBottom="20dp"
-        android:textSize="20dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/blank" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:id="@+id/paf" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:text="Your Answer..."
-        android:ems="10"
-        android:id="@+id/jawaban" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="submit"
-        android:background="#0091EA"
-        android:textColor="#fff"
-        android:padding="8dp"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/submit"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
-                android:text="USE HINT"
-                android:layout_width="150dp"
+            <TextView
+                android:text="SCORE : "
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/next"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-            <Button
-                android:text="Check Score"
-                android:layout_height="wrap_content"
-                android:id="@+id/scorecek"
-                android:layout_alignBaseline="@+id/next"
-                android:layout_alignBottom="@+id/next"
+                android:id="@+id/score_text"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_width="150dp" />
+                android:layout_marginTop="13dp" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/score_text"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/score" />
+
+            <TextView
+                android:text="Ibukota Jawa Barat Adalah..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:layout_below="@+id/score_text"
+                android:layout_alignLeft="@+id/score_text"
+                android:layout_alignStart="@+id/score_text"
+                android:layout_marginTop="34dp"
+                android:id="@+id/question"
+                android:layout_alignRight="@+id/score"
+                android:layout_alignEnd="@+id/score" />
+
+            <TextView
+                android:text="Your Hint Appear Here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="111dp"
+                android:id="@+id/blank" />
+
+            <Button
+                android:text="SUBMIT YOUR ANSWER"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/submit"
+                android:layout_below="@+id/jawaban"
+                android:layout_alignLeft="@+id/jawaban"
+                android:layout_alignStart="@+id/jawaban"
+                android:layout_alignRight="@+id/jawaban"
+                android:layout_alignEnd="@+id/jawaban" />
+
+            <Button
+                android:text="Cek SCORE"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:id="@+id/scorecek"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/submit"
+                android:layout_alignStart="@+id/submit" />
+
+            <Button
+                android:text="Use Hint"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/scorecek"
+                android:layout_alignRight="@+id/submit"
+                android:layout_alignEnd="@+id/submit"
+                android:id="@+id/next" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Your Answer Here Please"
+                android:textAlignment="center"
+                android:ems="10"
+                android:id="@+id/jawaban"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/blank"
+                android:layout_alignLeft="@+id/question"
+                android:layout_alignStart="@+id/question"
+                android:layout_alignRight="@+id/question"
+                android:layout_alignEnd="@+id/question" />
         </RelativeLayout>
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 
 </LinearLayout>

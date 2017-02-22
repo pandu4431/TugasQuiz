@@ -33,7 +33,7 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestinNumber));
         mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestinNumber);
         String clues = mAnswer;
-        String text2 = clues.replaceAll("[a-zA-Z0-9]","_ ");
+        String text2 = clues.replaceAll("[a-zA-Z0-9]","*");
         mblank.setText(text2);
 
         if (mQuestinNumber !=4) {
@@ -104,9 +104,7 @@ public class QuizActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                             String clues = mAnswer;
-                            char[] ares = clues.toCharArray();
                             int iC = clues.length();
-
                             Random x = new Random();
                             int b = x.nextInt(iC + 1 - 0);
                             char clone = clues.charAt(b);
