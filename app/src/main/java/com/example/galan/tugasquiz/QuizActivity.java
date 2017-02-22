@@ -34,7 +34,6 @@ public class QuizActivity extends AppCompatActivity {
     public void updateQuestion(){
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestinNumber));
         mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestinNumber);
-
         String clues = mAnswer;
         int iC = clues.length();
         String text2 = clues.replaceAll("[a-zA-Z0-9]","_ ");
@@ -109,27 +108,25 @@ public class QuizActivity extends AppCompatActivity {
                 builder.setPositiveButton("IYA", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
+                        int clueJumlah = 0;
+                        if (clueJumlah <=3){
 
-                        String clues = mAnswer;
-                        char[] ares = clues.toCharArray();
-                        int iC = clues.length();
+                            String clues = mAnswer;
+                            char[] ares = clues.toCharArray();
+                            int iC = clues.length();
 
-                        Random x = new Random();
-                        int b = x.nextInt(iC + 1 - 0);
-                        char clone = clues.charAt(b);
-                        String text2 = clues.replaceAll("[a-zA-Z0-9]","*");
-                        StringBuilder xs = new StringBuilder(text2);
-                        xs.setCharAt(b, clone);
-                        mblank.setText(xs);
+                            Random x = new Random();
+                            int b = x.nextInt(iC + 1 - 0);
+                            char clone = clues.charAt(b);
+                            String text2 = clues.replaceAll("[a-zA-Z0-9]","*");
+                            StringBuilder xs = new StringBuilder(text2);
+                            xs.setCharAt(b, clone);
+                            mblank.setText(xs);
+                            clueJumlah++;
 
-
-                        /*StringBuilder clues = new StringBuilder(mAnswer);
-                        String text2 = clues.replaceAll("[a-zA-Z0-9]","_ ");
-                        int iC = clues.length();
-                        Random xx = new Random();
-                        int x = xx.nextInt(iC);
-                        clues.setCharAt(x, 'a');
-                        mblank.setText(text2);*/
+                        }else{
+                            Toast.makeText(QuizActivity.this, "HABIS HINTNYA BROOOH", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
                 builder.setNegativeButton("TIDAK", new DialogInterface.OnClickListener() {
