@@ -34,7 +34,7 @@ public class QuizActivity extends AppCompatActivity {
     public void updateQuestion(){
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestinNumber));
         mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestinNumber);
-        String clues = mAnswer;
+        String clues = mAnswer ;
         int iC = clues.length();
         String text2 = clues.replaceAll("[a-zA-Z0-9]","_ ");
         mblank.setText(text2);
