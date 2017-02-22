@@ -22,10 +22,8 @@ public class QuizActivity extends AppCompatActivity {
     private Button mButtonChoices1;
     private EditText sAnswer;
     private Button mNext;
-    private Button mPrev;
     private Button mCek;
     private TextView mblank;
-    private TextView mPaf;
 
     private String mAnswer;
     private int mScore = 0;
@@ -35,7 +33,6 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestinNumber));
         mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestinNumber);
         String clues = mAnswer;
-        int iC = clues.length();
         String text2 = clues.replaceAll("[a-zA-Z0-9]","_ ");
         mblank.setText(text2);
 
@@ -77,9 +74,7 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoices1 = (Button) findViewById(R.id.submit);
         sAnswer = (EditText) findViewById(R.id.jawaban);
         mblank = (TextView) findViewById(R.id.blank);
-        mPaf = (TextView) findViewById(R.id.paf);
         mNext = (Button) findViewById(R.id.next);
-        //mPrev = (Button) findViewById(R.id.back);
         mCek = (Button) findViewById(R.id.scorecek);
         updateQuestion();
 
@@ -108,9 +103,6 @@ public class QuizActivity extends AppCompatActivity {
                 builder.setPositiveButton("IYA", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        int clueJumlah = 0;
-                        if (clueJumlah <=3){
-
                             String clues = mAnswer;
                             char[] ares = clues.toCharArray();
                             int iC = clues.length();
@@ -122,11 +114,7 @@ public class QuizActivity extends AppCompatActivity {
                             StringBuilder xs = new StringBuilder(text2);
                             xs.setCharAt(b, clone);
                             mblank.setText(xs);
-                            clueJumlah++;
 
-                        }else{
-                            Toast.makeText(QuizActivity.this, "HABIS HINTNYA BROOOH", Toast.LENGTH_SHORT).show();
-                        }
                     }
                 });
                 builder.setNegativeButton("TIDAK", new DialogInterface.OnClickListener() {
@@ -140,17 +128,7 @@ public class QuizActivity extends AppCompatActivity {
 
             }
         });
-    /*
-        mPrev.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                mQuestinNumber--;
-                mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestinNumber));
-                mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestinNumber);
-            }
-        });
-*/
-        //Button1
+
         mButtonChoices1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -172,11 +150,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void updateScore(int point){
-        mScoreView.setText(mScore);
-    }
-
-    public void clickExit(View v){
-        finish();
+        mScoreView.setText(""+mScore);
     }
 
     public void onBackPressed(){
