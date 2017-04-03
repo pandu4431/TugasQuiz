@@ -10,17 +10,19 @@ public class QuestionLibrery {
             "Apa nama ibukota Jawa Barat ?",
             "Apa nama makanan khas Madura ?",
             "Dimana letak candi Borobudur ?",
-            "Siapakah Presiden RI Sekarang ?"
+            "Siapakah Presiden RI Sekarang ?",
+            "Bagaimana bentuk bumi ?"
     };
 
     private String mChoices[][] = {
             {"Cimahi", "Bandung", "Madiun"},
             {"Sate", "Lumpia", "Sarden"},
             {"Klaten", "Yogyakarta", "Wates"},
-            {"Ir. Soekarno", "Bj. Habibie", "Joko Widodo"}
+            {"Ir. Soekarno", "Bj. Habibie", "Joko Widodo"},
+            {"Bulat","Segitiga","Tidak Kotak"}
     };
 
-    private String mCorrectAnswer[] = {"Bandung", "Sate", "Klaten", "Joko Widodo"};
+    private String mCorrectAnswer[] = {"Bandung", "Sate", "Klaten", "Joko Widodo","Tidak Kotak"};
 
     public String getQuestion(int a) {
         String question = mQuestion[a];
@@ -30,16 +32,6 @@ public class QuestionLibrery {
     public String getChoice1(int a) {
         String choice0 = mChoices[a][0];
         return choice0;
-    }
-
-    public String getChoice2(int a) {
-        String choice1 = mChoices[a][1];
-        return choice1;
-    }
-
-    public String getChoice3(int a) {
-        String choice2 = mChoices[a][2];
-        return choice2;
     }
 
     public String getCorrectAnswer(int a) {

@@ -127,6 +127,7 @@
                 android:layout_alignRight="@+id/score"
                 android:layout_alignEnd="@+id/score"
                 android:id="@+id/hintNum" />
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

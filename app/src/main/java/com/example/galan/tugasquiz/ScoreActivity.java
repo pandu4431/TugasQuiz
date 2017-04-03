@@ -22,7 +22,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         Intent mIntent = getIntent();
         int intValue = mIntent.getIntExtra("result", 0);
-        mScores.setText(String.valueOf(intValue));
+        mScores.setText(Integer.toString(intValue));
 
         mBacks.setOnClickListener(new View.OnClickListener() {
             @Override
