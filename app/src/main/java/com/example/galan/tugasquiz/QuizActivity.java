@@ -2,9 +2,11 @@ package com.example.galan.tugasquiz;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,6 +31,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView mblank;
     private TextView hint;
     private String mAnswer;
+    private CardView cards;
     private int mScore = 0;
     private int mQuestinNumber = 0;
 
@@ -79,6 +82,7 @@ public class QuizActivity extends AppCompatActivity {
         mNext = (Button) findViewById(R.id.next);
         mCek = (Button) findViewById(R.id.scorecek);
         hint = (TextView) findViewById(R.id.hintNum);
+        cards = (CardView) findViewById(R.id.cardmain);
         updateQuestion();
 
         sAnswer.setOnClickListener(new View.OnClickListener() {
@@ -177,6 +181,7 @@ public class QuizActivity extends AppCompatActivity {
                 reset();
                 break;
             case R.id.setting:
+                change();
                 break;
 
         }
@@ -207,6 +212,17 @@ public class QuizActivity extends AppCompatActivity {
         alert.show();
     }
 
+    public void change(){
+
+        cards.setCardBackgroundColor(Color.parseColor("#2C3E50"));
+        /**
+        mScoreView.setTextColor(Color.parseColor("#E4F1FE"));
+        mQuestionView.setTextColor(Color.parseColor("#E4F1FE"));
+        mblank.setTextColor(Color.parseColor("#E4F1FE"));
+        hint.setTextColor(Color.parseColor("#E4F1FE"));
+         */
+    }
+
     public void reset() {
         mQuestinNumber = 0;
         mScore = 0;
@@ -216,6 +232,7 @@ public class QuizActivity extends AppCompatActivity {
         String clues = mAnswer;
         String text2 = clues.replaceAll("[a-zA-Z0-9]", "*");
         mblank.setText(text2);
+        cards.setCardBackgroundColor(Color.parseColor("#ffffff"));
     }
 
     public void share() {
